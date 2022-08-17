@@ -62,4 +62,3 @@ void Board::move(std::vector<std::tuple<Element, Element, Element>> moves) {
     }
   } 
 }
-

@@ -47,4 +47,3 @@ int Sphere::count(int gemType) const {
   }
   return count;
 }
-

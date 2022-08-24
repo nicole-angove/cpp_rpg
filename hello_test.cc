@@ -152,4 +152,3 @@ TEST(Board, TotalGemsConstantWhenMoving) {
   
   EXPECT_EQ(initCount, finalCount);
 }
-  

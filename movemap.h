@@ -6,6 +6,7 @@
 #include <map>
 
 #include "element.h"
+#include "move.h"
 
 /**
  * @brief 
@@ -13,7 +14,7 @@
  */
 class MoveMap {
   public:
-  MoveMap(const std::vector<std::tuple<Element, Element, Element>>);
+  MoveMap(const std::vector<Move>);
   int inputCount(const int sphereType = Element::ALL, const int gemType = Element::ALL) const;
   int outputCount(const int sphereType = Element::ALL, const int gemType = Element::ALL) const;
 

@@ -2,7 +2,7 @@
 
 #include "movemap.h"
 
-MoveMap::MoveMap(std::vector<std::tuple<Element, Element, Element>> moves) {
+MoveMap::MoveMap(std::vector<Move> moves) {
     for (auto element : ELEMENTLIST) {
         _inputs.insert({element, {}});
         _outputs.insert({element, {}});
@@ -13,12 +13,8 @@ MoveMap::MoveMap(std::vector<std::tuple<Element, Element, Element>> moves) {
     }
 
     for (auto move : moves) {
-        Element gemType = std::get<0>(move);
-        Element sourceSphere = std::get<1>(move);
-        Element destSphere = std::get<2>(move);
-
-        _inputs.at(sourceSphere).at(gemType)++;
-        _outputs.at(destSphere).at(gemType)++;
+        _inputs.at(move.source).at(move.gem)++;
+        _outputs.at(move.destination).at(move.gem)++;
     }
 }
 

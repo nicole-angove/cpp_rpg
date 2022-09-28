@@ -75,7 +75,7 @@ TEST(Board, BoardInitGemCounts) {
 }
 
 TEST(Board, MoveMapTest) {
-  std::vector<std::tuple<Element, Element, Element>> moves = {{Element::FIRE, Element::FIRE, Element::WATER}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}};
+  std::vector<Move> moves = {{Element::FIRE, Element::FIRE, Element::WATER}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}};
   
   MoveMap moveMap(moves);
   EXPECT_EQ(moveMap.inputCount(), 3);
@@ -114,7 +114,7 @@ TEST(Board, CountTest) {
 
 TEST(Board, IsMoveValidTest) {
   Board board;
-  std::vector<std::tuple<Element, Element, Element>> moves;
+  std::vector<Move> moves;
 
   moves = {{Element::FIRE, Element::FIRE, Element::WATER}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}};
   EXPECT_EQ(board.isMoveValid(moves), false);
@@ -130,8 +130,8 @@ TEST(Board, SourceSpheresHaveLessGemsAndDestSpheresHaveMoreAfterMove) {
   int initSourceCount = board.count(Element::FIRE, Element::ALL);
   int initDestCount = board.count(Element::LIGHTNING, Element::ALL);
 
-  std::vector<std::tuple<Element, Element, Element>> move = {{Element::FIRE, Element::FIRE, Element::LIGHTNING}};
-  board.move(move);
+  std::vector<Move> move = {{Element::FIRE, Element::FIRE, Element::LIGHTNING}};
+  board.doMoves(move);
   
   int finalSourceCount = board.count(Element::FIRE, Element::ALL);
   int finalDestCount = board.count(Element::LIGHTNING, Element::ALL);
@@ -145,8 +145,8 @@ TEST(Board, TotalGemsConstantWhenMoving) {
   Board board;
   int initCount = board.count();
   
-  std::vector<std::tuple<Element, Element, Element>> moves = {{Element::FIRE, Element::FIRE, Element::WATER}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}};
-  board.move(moves);
+  std::vector<Move> moves = {{Element::FIRE, Element::FIRE, Element::WATER}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}, {Element::EARTH, Element::EARTH, Element::LIGHTNING}};
+  board.doMoves(moves);
   
   int finalCount = board.count();
   

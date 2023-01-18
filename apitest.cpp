@@ -2,7 +2,6 @@
 #include "api.h"
 
 TEST(API, useAbilitySuccess) {
-
     bool expectedResult = true;
 
     bool result = useAbility(0);

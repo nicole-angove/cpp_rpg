@@ -1,7 +1,8 @@
 name: Build in CI
 run-name: ${{ github.actor }} is running
 on:
-- push
+  - push
+  - pull_request
 jobs:
   build:
     runs-on: ubuntu-latest

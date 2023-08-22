@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+// Methods for player to interact with game
+service PlayerService {
+  rpc UseAbility (AbilityID) returns (Success) {}
+}
+
+message AbilityID {
+  int64 id = 1;
+}
+
+message Success {
+  bool success = 1;
+}

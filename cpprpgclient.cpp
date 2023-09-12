@@ -1,6 +1,6 @@
 #include <grpcpp/grpcpp.h>
 
-#include "apiclient.h"
+#include "grpc/apiclient.h"
 
 std::string parseTargetAddress(int argc, char **argv) {
   std::string target_str;

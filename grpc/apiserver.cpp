@@ -2,9 +2,9 @@
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/health_check_service_interface.h>
 
-#include "api.h"
-#include "apiserver.h"
-#include "cpprpg.grpc.pb.h"
+#include "api/api.h"
+#include "grpc/apiserver.h"
+#include "grpc/cpprpg.grpc.pb.h"
 
 using grpc::ServerContext;
 using grpc::Status;

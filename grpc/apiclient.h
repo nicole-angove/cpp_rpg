@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "cpprpg.grpc.pb.h"
+#include "grpc/cpprpg.grpc.pb.h"
 #include <grpcpp/grpcpp.h>
 
 /**

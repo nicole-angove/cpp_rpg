@@ -1,7 +1,7 @@
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/impl/codegen/service_type.h>
 
-#include "apiserver.h"
+#include "grpc/apiserver.h"
 
 int main(int argc, char **argv) {
   auto server = RunServer();
